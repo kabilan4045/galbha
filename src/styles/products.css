@@ -1,0 +1,126 @@
+.page-hero {
+  padding: 56px 24px 96px;
+  max-width: var(--content-width);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--green-600);
+}
+
+.breadcrumb svg {
+  color: var(--line);
+}
+
+.page-hero h1 {
+  margin-top: 4px;
+}
+
+.page-hero > p {
+  max-width: 720px;
+}
+
+.products-page__grid {
+  margin-top: 40px;
+}
+
+.products-listing > p {
+  margin-bottom: 0;
+}
+
+.area-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.area-card__link {
+  margin-top: auto;
+  padding-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-600);
+}
+
+/* ---------- Product cards ---------- */
+
+.product-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+.product-card__image {
+  aspect-ratio: 4 / 3;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.product-card__image-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__image-icon {
+  color: var(--navy-600);
+  opacity: 0.3;
+}
+
+.product-card__image-caption {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.product-card__name {
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+}
+
+.product-card__composition {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Not found ---------- */
+
+.not-found {
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.not-found .btn {
+  margin-top: 16px;
+}
