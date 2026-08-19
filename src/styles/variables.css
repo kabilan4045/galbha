@@ -8,7 +8,13 @@
   --green-500: #21b354;
   --green-400: #3fcb6c;
 
-  /* Premium accent — used sparingly (see .seal, .founder-letter, .stat-foil-rule, .partner-cta) */
+  /* Pack-design blue accent — used for the opening/hero page treatment */
+  --blue-700: #0f3f8c;
+  --blue-600: #1a56c4;
+  --blue-500: #2f74e0;
+  --blue-100: #d9e6fa;
+
+  /* Premium accent — used sparingly (see .seal, .founder-letter, .partner-cta) */
   --gold-600: #9c7a2e;
   --gold-500: #b9974a;
   --gold-500-rgb: 185, 151, 74; /* for alpha-blended box-shadow rings */
@@ -29,13 +35,13 @@
   --on-dark-soft: rgba(242, 244, 248, 0.72);
   --on-dark-line: rgba(242, 244, 248, 0.18);
 
-  /* Type */
+  /* Type — 2 typefaces sitewide: a serif for display, a sans for everything else */
   --font-display: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
   --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: var(--font-body);
 
   /* Layout */
-  --content-width: 1180px;
+  --content-width: 1320px;
   --rail-width: 112px;
   --radius-sm: 4px;
   --radius-md: 6px;

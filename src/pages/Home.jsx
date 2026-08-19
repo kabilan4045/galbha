@@ -25,12 +25,6 @@ import CardIcon from '../components/CardIcon';
 import TickItem from '../components/TickItem';
 import { therapeuticAreas } from '../data/therapeuticAreas';
 import { products } from '../data/products';
-import heroPhoto from '../assets/photos/hero-pharmacist.jpg';
-import aboutPhoto from '../assets/photos/about-team-meeting.jpg';
-import qualityPhoto from '../assets/photos/quality-production-line.jpg';
-import panIndiaPhoto from '../assets/photos/pan-india-warehouse.jpg';
-import partnerPhoto from '../assets/photos/partner-handshake.jpg';
-import therapeuticBanner from '../assets/photos/therapeutic-areas-banner.jpg';
 
 const QUALITY_APPROACH = [
   {
@@ -143,59 +137,32 @@ export default function Home() {
     <>
       {/* 01 — HOME */}
       <Section id="hero" index="01" label="Home" bg="paper" className="hero-section">
-        <div className="hero-grid">
-          <div className="hero-copy">
-            <span className="eyebrow">Quality Medicines. Ethical Principles. Trusted Care.</span>
-            <p className="hero-body">
-              Ghalbha Remedies is a quality-focused pharmaceutical company committed to bringing
-              reliable, quality-oriented medicines to the healthcare market across India.
-            </p>
-            <p className="hero-body">
-              Founded on extensive professional and business experience, we work with carefully
-              selected manufacturing partners operating under recognized quality and regulatory
-              standards, including <strong>WHO-GMP, ISO, GLP and US FDA standards/requirements, as
-              applicable to the facility and product</strong>.
-            </p>
-            <p className="hero-statement">
-              Our approach is simple: <strong>Select Responsibly. Promote Ethically. Serve Reliably.</strong>
-            </p>
+        <div className="hero-copy">
+          <span className="eyebrow">Quality Medicines. Ethical Principles. Trusted Care.</span>
+          <p className="hero-body">
+            Ghalbha Remedies is a quality-focused pharmaceutical company committed to bringing
+            reliable, quality-oriented medicines to the healthcare market across India.
+          </p>
+          <p className="hero-body">
+            Founded on extensive professional and business experience, we work with carefully
+            selected manufacturing partners operating under recognized quality and regulatory
+            standards, including <strong>WHO-GMP, ISO, GLP and US FDA standards/requirements, as
+            applicable to the facility and product</strong>.
+          </p>
+          <p className="hero-statement">
+            Our approach is simple: <strong>Select Responsibly. Promote Ethically. Serve Reliably.</strong>
+          </p>
 
-            <div className="hero-ctas">
-              <Link to="/products" className="btn btn-primary">
-                Explore Our Products <ArrowRight size={16} />
-              </Link>
-              <HashLink hash="#quality" className="btn btn-secondary">
-                Our Commitment to Quality
-              </HashLink>
-            </div>
-          </div>
-
-          <div className="hero-visual">
-            <img
-              src={heroPhoto}
-              alt="Pharmacist reviewing medicine stock on a pharmacy shelf"
-              className="hero-photo"
-            />
+          <div className="hero-ctas">
+            <Link to="/products" className="btn btn-primary">
+              Explore Our Products <ArrowRight size={16} />
+            </Link>
+            <HashLink hash="#quality" className="btn btn-secondary">
+              Our Commitment to Quality
+            </HashLink>
           </div>
         </div>
       </Section>
-
-      <div className="trust-strip">
-        <div className="container trust-strip__inner">
-          <div className="seal-row">
-            {SEALS.map((seal) => (
-              <SealBadge key={seal} label={seal} />
-            ))}
-          </div>
-          <div className="partner-logos">
-            {[1, 2, 3, 4].map((n) => (
-              <span className="partner-logo-placeholder mono" key={n}>
-                [Partner logo]
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
 
       <div className="stats-bar">
         <div className="container stats-bar__inner">
@@ -218,74 +185,40 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 02 — EXPERIENCE */}
-      <Section id="experience" index="02" label="Experience" bg="mist">
-        <span className="stat-ring">
-          <span className="stat-number">18+</span>
-        </span>
-        <span className="stat-foil-rule" aria-hidden="true" />
-        <h2>Experience That Shapes Our Approach</h2>
+      {/* 02 — ABOUT */}
+      <Section id="about" index="02" label="About" bg="paper-alt">
+        <h2>Building a Pharmaceutical Company With Purpose</h2>
         <p>
-          Behind Ghalbha Remedies is a professional journey spanning more than{' '}
-          <strong>18 years</strong>, with experience across diverse manufacturing sectors
-          including <strong>Textiles, FMCG, Pharmaceuticals, Steel and Agriculture</strong>.
+          Ghalbha Remedies is a <strong>Chandigarh-based pharmaceutical company</strong> engaged
+          in ethical pharmaceutical marketing, trading, wholesale operations and third-party
+          manufacturing coordination, with a vision to establish a strong{' '}
+          <strong>PAN-India presence</strong>.
         </p>
         <p>
-          This exposure has provided a practical understanding of people, processes, business
-          operations, organizational requirements and the challenges involved in building
-          sustainable businesses.
+          The company has been founded with a clear purpose: to make quality-oriented medicines
+          available through responsible sourcing, trusted manufacturing relationships and
+          ethical pharmaceutical practices.
         </p>
-        <p>That experience now forms the foundation of our approach to pharmaceuticals.</p>
-        <HashLink hash="#story" className="btn btn-secondary">
-          Discover Our Story
-        </HashLink>
-      </Section>
-
-      {/* 03 — ABOUT */}
-      <Section id="about" index="03" label="About" bg="paper-alt">
-        <div className="photo-band photo-band--left">
-          <div className="photo-band__visual">
-            <img
-              src={aboutPhoto}
-              alt="Business professionals in a meeting discussing strategy"
-              className="band-photo"
-            />
-          </div>
-          <div className="photo-band__content">
-            <h2>Building a Pharmaceutical Company With Purpose</h2>
-            <p>
-              Ghalbha Remedies is a <strong>Chandigarh-based pharmaceutical company</strong> engaged
-              in ethical pharmaceutical marketing, trading, wholesale operations and third-party
-              manufacturing coordination, with a vision to establish a strong{' '}
-              <strong>PAN-India presence</strong>.
-            </p>
-            <p>
-              The company has been founded with a clear purpose: to make quality-oriented medicines
-              available through responsible sourcing, trusted manufacturing relationships and
-              ethical pharmaceutical practices.
-            </p>
-            <p>We believe that healthcare is ultimately about people.</p>
-            <p>
-              Every medicine represented by us eventually reaches a patient, and that responsibility
-              influences the way we approach our products, manufacturing partners, business
-              relationships and market practices.
-            </p>
-            <p>
-              Our aim is to build Ghalbha Remedies as an organization recognized for:
-            </p>
-            <div className="chip-row">
-              {['Quality', 'Integrity', 'Responsibility', 'Reliability'].map((v) => (
-                <span key={v} className="chip">
-                  {v}
-                </span>
-              ))}
-            </div>
-          </div>
+        <p>We believe that healthcare is ultimately about people.</p>
+        <p>
+          Every medicine represented by us eventually reaches a patient, and that responsibility
+          influences the way we approach our products, manufacturing partners, business
+          relationships and market practices.
+        </p>
+        <p>
+          Our aim is to build Ghalbha Remedies as an organization recognized for:
+        </p>
+        <div className="chip-row">
+          {['Quality', 'Integrity', 'Responsibility', 'Reliability'].map((v) => (
+            <span key={v} className="chip">
+              {v}
+            </span>
+          ))}
         </div>
       </Section>
 
-      {/* 04 — OUR STORY */}
-      <Section id="story" index="04" label="Our Story" bg="paper">
+      {/* 03 — OUR STORY */}
+      <Section id="story" index="03" label="Our Story" bg="paper">
         <h2>From Diverse Experience to a Focused Pharmaceutical Vision</h2>
         <p>
           Ghalbha Remedies is the result of a professional journey that has crossed several
@@ -321,8 +254,8 @@ export default function Home() {
         </p>
       </Section>
 
-      {/* 05 — FOUNDER */}
-      <Section id="founder" index="05" label="Founder" bg="mist" className="founder-section">
+      {/* 04 — FOUNDER */}
+      <Section id="founder" index="04" label="Founder" bg="mist" className="founder-section">
         <div className="founder-layout">
           <div
             className="founder-portrait placeholder-frame"
@@ -377,8 +310,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 06 — FOUNDER'S MESSAGE */}
-      <Section id="founder-message" index="06" label="Founder&rsquo;s Message" bg="paper-alt">
+      {/* 05 — FOUNDER'S MESSAGE */}
+      <Section id="founder-message" index="05" label="Founder&rsquo;s Message" bg="paper-alt">
         <h2>A Message From the Founder</h2>
         <blockquote className="founder-letter">
           <p>
@@ -428,11 +361,11 @@ export default function Home() {
         </blockquote>
       </Section>
 
-      {/* 07 / 08 — VISION / MISSION */}
+      {/* 06 / 07 — VISION / MISSION */}
       <div className="split-section reveal" id="vision-mission" ref={visionMissionRef}>
         <div className="split-panel split-panel--dark on-dark" id="vision">
           <div className="split-panel__rail">
-            <span className="section-rail__code">§07</span>
+            <span className="section-rail__code">§06</span>
             <span className="section-rail__label">Vision</span>
           </div>
           <h2>Our Vision</h2>
@@ -449,7 +382,7 @@ export default function Home() {
 
         <div className="split-panel split-panel--light" id="mission">
           <div className="split-panel__rail">
-            <span className="section-rail__code">§08</span>
+            <span className="section-rail__code">§07</span>
             <span className="section-rail__label">Mission</span>
           </div>
           <h2>Our Mission</h2>
@@ -474,65 +407,54 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 09 — QUALITY */}
-      <Section id="quality" index="09" label="Quality" bg="paper">
-        <div className="photo-band photo-band--right">
-          <div className="photo-band__visual">
-            <img
-              src={qualityPhoto}
-              alt="Pharmaceutical workers packaging tablets on a production line"
-              className="band-photo"
-            />
-          </div>
-          <div className="photo-band__content">
-            <h2>Quality Is Our Starting Point.</h2>
-            <p>
-              At Ghalbha Remedies, we believe that quality should be considered from the very
-              beginning of the pharmaceutical journey.
-            </p>
-            <p>
-              We therefore seek to work with carefully selected manufacturing partners that have
-              appropriate manufacturing capabilities and operate under recognized quality and
-              regulatory frameworks.
-            </p>
-            <p>
-              Depending on the facility and applicable product requirements, our manufacturing
-              network includes facilities associated with standards and regulatory frameworks such
-              as:
-            </p>
-            <div className="seal-row">
-              {SEALS.map((seal) => (
-                <SealBadge key={seal} label={seal} />
-              ))}
-            </div>
-            <p className="section-spacer-top">
-              Our approach focuses on responsible partner selection, manufacturing capabilities,
-              quality systems, regulatory compliance and consistency.
-            </p>
-
-            <h3 className="subsection-heading">Our Quality Approach</h3>
-            <ul className="quality-approach-list">
-              {QUALITY_APPROACH.map(({ icon: Icon, title, text }, index) => (
-                <li className="quality-approach-list__item" key={title}>
-                  <CardIcon icon={Icon} variant={index % 3} />
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <p className="closing-statement">
-              Our goal is not simply to bring a medicine to the market. Our goal is to build
-              confidence in every medicine we represent.
-            </p>
-          </div>
+      {/* 08 — QUALITY */}
+      <Section id="quality" index="08" label="Quality" bg="paper">
+        <h2>Quality Is Our Starting Point.</h2>
+        <p>
+          At Ghalbha Remedies, we believe that quality should be considered from the very
+          beginning of the pharmaceutical journey.
+        </p>
+        <p>
+          We therefore seek to work with carefully selected manufacturing partners that have
+          appropriate manufacturing capabilities and operate under recognized quality and
+          regulatory frameworks.
+        </p>
+        <p>
+          Depending on the facility and applicable product requirements, our manufacturing
+          network includes facilities associated with standards and regulatory frameworks such
+          as:
+        </p>
+        <div className="seal-row">
+          {SEALS.map((seal) => (
+            <SealBadge key={seal} label={seal} />
+          ))}
         </div>
+        <p className="section-spacer-top">
+          Our approach focuses on responsible partner selection, manufacturing capabilities,
+          quality systems, regulatory compliance and consistency.
+        </p>
+
+        <h3 className="subsection-heading">Our Quality Approach</h3>
+        <ul className="quality-approach-list">
+          {QUALITY_APPROACH.map(({ icon: Icon, title, text }, index) => (
+            <li className="quality-approach-list__item" key={title}>
+              <CardIcon icon={Icon} variant={index % 3} />
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <p className="closing-statement">
+          Our goal is not simply to bring a medicine to the market. Our goal is to build
+          confidence in every medicine we represent.
+        </p>
       </Section>
 
-      {/* 10 — ETHICAL MARKETING */}
-      <Section id="ethical-marketing" index="10" label="Ethical Marketing" bg="mist">
+      {/* 09 — ETHICAL MARKETING */}
+      <Section id="ethical-marketing" index="09" label="Ethical Marketing" bg="mist">
         <h2>Ethical Marketing. Responsible Healthcare.</h2>
         <p>
           Pharmaceutical marketing carries a responsibility that is different from ordinary
@@ -572,15 +494,8 @@ export default function Home() {
         </p>
       </Section>
 
-      {/* 11 — THERAPEUTIC AREAS */}
-      <Section id="therapeutic-areas" index="11" label="Therapeutic Areas" bg="paper-alt">
-        <div className="section-banner">
-          <img
-            src={therapeuticBanner}
-            alt="Gloved lab technician handling pharmaceutical capsules"
-            className="section-banner__photo"
-          />
-        </div>
+      {/* 10 — THERAPEUTIC AREAS */}
+      <Section id="therapeutic-areas" index="10" label="Therapeutic Areas" bg="paper-alt">
         <h2>Focused Therapeutic Expertise</h2>
         <p>
           Our pharmaceutical portfolio is being developed across key therapeutic areas with the
@@ -593,8 +508,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 12 — PRODUCTS */}
-      <Section id="products-teaser" index="12" label="Products" bg="paper">
+      {/* 11 — PRODUCTS */}
+      <Section id="products-teaser" index="11" label="Products" bg="paper">
         <h2>Quality-Oriented Products Across Key Therapeutic Areas</h2>
         <p>
           We are developing a diversified pharmaceutical portfolio with a focus on{' '}
@@ -621,8 +536,8 @@ export default function Home() {
         </Link>
       </Section>
 
-      {/* 13 — WHY GALBHA REMEDIES */}
-      <Section id="why-us" index="13" label="Why Ghalbha Remedies" bg="mist">
+      {/* 12 — WHY GALBHA REMEDIES */}
+      <Section id="why-us" index="12" label="Why Ghalbha Remedies" bg="mist">
         <h2>Why Choose Ghalbha Remedies?</h2>
         <div className="card-grid card-grid--3">
           {WHY_US.map(({ icon: Icon, title, text }, index) => (
@@ -635,87 +550,65 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 14 — PAN-INDIA OPERATIONS */}
-      <Section id="pan-india" index="14" label="PAN-India" bg="paper">
-        <div className="photo-band photo-band--left">
-          <div className="photo-band__visual">
-            <img
-              src={panIndiaPhoto}
-              alt="Warehouse aisles stocked with distribution boxes"
-              className="band-photo"
-            />
-          </div>
-          <div className="photo-band__content">
-            <h2>From Chandigarh to Healthcare Markets Across India</h2>
-            <p>
-              Based in <strong>Chandigarh</strong>, Ghalbha Remedies is building its
-              pharmaceutical operations with a PAN-India vision.
-            </p>
-            <p>Our business activities include:</p>
-            <p className="pipe-list">
-              {[
-                'Ethical Pharmaceutical Marketing',
-                'Trading & Wholesale',
-                'Third-Party Manufacturing Coordination',
-                'Pharmaceutical Distribution & Business Partnerships',
-              ].map((s) => (
-                <span key={s}>{s}</span>
-              ))}
-            </p>
-            <p>
-              We aim to develop strong relationships with distributors, stockists, wholesalers,
-              healthcare professionals and business partners across India.
-            </p>
-            <p className="closing-statement">Build locally. Think nationally. Serve responsibly.</p>
-          </div>
-        </div>
+      {/* 13 — PAN-INDIA OPERATIONS */}
+      <Section id="pan-india" index="13" label="PAN-India" bg="paper">
+        <h2>From Chandigarh to Healthcare Markets Across India</h2>
+        <p>
+          Based in <strong>Chandigarh</strong>, Ghalbha Remedies is building its
+          pharmaceutical operations with a PAN-India vision.
+        </p>
+        <p>Our business activities include:</p>
+        <p className="pipe-list">
+          {[
+            'Ethical Pharmaceutical Marketing',
+            'Trading & Wholesale',
+            'Third-Party Manufacturing Coordination',
+            'Pharmaceutical Distribution & Business Partnerships',
+          ].map((s) => (
+            <span key={s}>{s}</span>
+          ))}
+        </p>
+        <p>
+          We aim to develop strong relationships with distributors, stockists, wholesalers,
+          healthcare professionals and business partners across India.
+        </p>
+        <p className="closing-statement">Build locally. Think nationally. Serve responsibly.</p>
       </Section>
 
-      {/* 15 — PARTNER */}
-      <Section id="partner" index="15" label="Partner" bg="navy" onDark className="partner-section">
-        <div className="photo-band photo-band--right">
-          <div className="photo-band__visual">
-            <img
-              src={partnerPhoto}
-              alt="Business partners shaking hands after an agreement"
-              className="band-photo"
-            />
-          </div>
-          <div className="photo-band__content">
-            <h2>Let&rsquo;s Build Healthcare Partnerships on Trust.</h2>
-            <p>
-              We welcome enquiries from organizations and professionals interested in building
-              long-term pharmaceutical business relationships with Ghalbha Remedies.
-            </p>
-            <p>We welcome enquiries from:</p>
-            <p className="pipe-list">
-              {[
-                'Pharmaceutical Distributors',
-                'Stockists & Wholesalers',
-                'Healthcare Professionals',
-                'Business Partners',
-                'Marketing Associates',
-              ].map((s) => (
-                <span key={s}>{s}</span>
-              ))}
-            </p>
-            <p>We believe successful partnerships are built through:</p>
-            <div className="chip-row">
-              {['Quality', 'Transparency', 'Professionalism', 'Ethical Practices', 'Mutual Growth'].map((v) => (
-                <span key={v} className="chip chip--dark">
-                  {v}
-                </span>
-              ))}
-            </div>
-            <a href="#contact" onClick={handlePartnerCta} className="btn btn-primary partner-cta">
-              Partner With Ghalbha Remedies <ArrowRight size={16} />
-            </a>
-          </div>
+      {/* 14 — PARTNER */}
+      <Section id="partner" index="14" label="Partner" bg="navy" onDark className="partner-section">
+        <h2>Let&rsquo;s Build Healthcare Partnerships on Trust.</h2>
+        <p>
+          We welcome enquiries from organizations and professionals interested in building
+          long-term pharmaceutical business relationships with Ghalbha Remedies.
+        </p>
+        <p>We welcome enquiries from:</p>
+        <p className="pipe-list">
+          {[
+            'Pharmaceutical Distributors',
+            'Stockists & Wholesalers',
+            'Healthcare Professionals',
+            'Business Partners',
+            'Marketing Associates',
+          ].map((s) => (
+            <span key={s}>{s}</span>
+          ))}
+        </p>
+        <p>We believe successful partnerships are built through:</p>
+        <div className="chip-row">
+          {['Quality', 'Transparency', 'Professionalism', 'Ethical Practices', 'Mutual Growth'].map((v) => (
+            <span key={v} className="chip chip--dark">
+              {v}
+            </span>
+          ))}
         </div>
+        <a href="#contact" onClick={handlePartnerCta} className="btn btn-primary partner-cta">
+          Partner With Ghalbha Remedies <ArrowRight size={16} />
+        </a>
       </Section>
 
-      {/* 16 — CONTACT */}
-      <Section id="contact" index="16" label="Contact" bg="paper-alt">
+      {/* 15 — CONTACT */}
+      <Section id="contact" index="15" label="Contact" bg="paper-alt">
         <h2>Connect With Ghalbha Remedies</h2>
         <p>
           Whether you have a product enquiry, distribution opportunity, business proposal or

@@ -102,15 +102,24 @@
   color: var(--ink-soft);
 }
 
-.product-card__name {
-  margin-bottom: 4px;
-  font-size: 1.05rem;
-}
-
 .product-card__composition {
   margin-bottom: 0;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Below this width the grid drops to a single column — let the full
+   formulation wrap instead of hiding it behind an unreachable ellipsis. */
+@media (max-width: 560px) {
+  .product-card__composition {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
 }
 
 /* ---------- Not found ---------- */

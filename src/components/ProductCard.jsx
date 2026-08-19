@@ -14,8 +14,9 @@ export default function ProductCard({ product, href, onClick }) {
           </>
         )}
       </div>
-      <h3 className="product-card__name">{product.brand}</h3>
-      <p className="product-card__composition">{product.composition}</p>
+      <p className="product-card__composition" title={product.composition}>
+        {product.composition}
+      </p>
     </>
   );
 

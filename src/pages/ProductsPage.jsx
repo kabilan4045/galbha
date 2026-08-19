@@ -19,7 +19,7 @@ export default function ProductsPage() {
         responsible sourcing and ethical pharmaceutical marketing.
       </p>
 
-      <div className="card-grid card-grid--3 products-page__grid">
+      <div className="card-grid card-grid--2 products-page__grid">
         {products.map((product) => (
           <ProductCard product={product} key={product.brand} />
         ))}
