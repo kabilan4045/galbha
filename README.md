@@ -1,6 +1,6 @@
-# Ghalbha Remedies — Website
+# Galbha Remedies — Website
 
-React (Vite) single-page site for Ghalbha Remedies.
+React (Vite) single-page site for Galbha Remedies.
 
 ## Development
 

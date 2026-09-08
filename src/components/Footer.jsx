@@ -6,26 +6,13 @@ import logo from '../assets/logo.png';
 
 const FOOTER_COLUMNS = [
   {
-    title: 'Company',
+    title: 'Explore',
     links: [
-      { label: 'About Us', hash: '#about' },
-      { label: 'Our Story', hash: '#story' },
-      { label: 'Founder', hash: '#founder' },
-    ],
-  },
-  {
-    title: 'Business',
-    links: [
+      { label: 'About', hash: '#about' },
       { label: 'Quality', hash: '#quality' },
-      { label: 'Ethical Marketing', hash: '#ethical-marketing' },
       { label: 'Therapeutic Areas', hash: '#therapeutic-areas' },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { label: 'Our Products', to: '/products' },
-      { label: 'Partner With Us', hash: '#partner' },
+      { label: 'Products', to: '/products' },
+      { label: 'Partner', hash: '#partner' },
     ],
   },
   {
@@ -46,7 +33,7 @@ export default function Footer() {
       <div className="container site-footer__inner">
         <div className="site-footer__brand-col">
           <div className="site-footer__logo-plate">
-            <img src={logo} alt="Ghalbha Remedies" className="site-footer__logo" />
+            <img src={logo} alt="Galbha Remedies" className="site-footer__logo" />
           </div>
           <p className="site-footer__tagline">
             Quality Medicines. Ethical Principles. Trusted Care.
@@ -101,7 +88,7 @@ export default function Footer() {
       </div>
 
       <div className="container site-footer__bottom">
-        <span>&copy; 2026 Ghalbha Remedies. All Rights Reserved.</span>
+        <span>&copy; 2026 Galbha Remedies. All Rights Reserved.</span>
         <button
           type="button"
           className="site-footer__disclaimer-trigger"

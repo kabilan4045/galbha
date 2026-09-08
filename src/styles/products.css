@@ -85,9 +85,11 @@
 }
 
 .product-card__image-photo {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 12px;
 }
 
 .product-card__image-icon {
@@ -110,6 +112,23 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.product-card__enquire {
+  margin-top: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #06210f;
+}
+
+.btn-whatsapp:hover {
+  background: #1fbd5a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
 }
 
 /* Below this width the grid drops to a single column — let the full

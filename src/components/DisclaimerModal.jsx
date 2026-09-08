@@ -57,7 +57,7 @@ export default function DisclaimerModal({ open, onClose }) {
             documentation.
           </p>
           <p>
-            Ghalbha Remedies does not encourage self-medication and recommends that patients
+            Galbha Remedies does not encourage self-medication and recommends that patients
             consult an appropriately qualified healthcare professional for medical advice.
           </p>
         </div>

@@ -14,6 +14,12 @@ import {
   LayoutGrid,
   UserCheck,
   ArrowRight,
+  Phone,
+  Mail,
+  Globe,
+  MessageCircle,
+  Eye,
+  Target,
 } from 'lucide-react';
 import { useReveal } from '../hooks/useReveal';
 import Section from '../components/Section';
@@ -25,6 +31,13 @@ import CardIcon from '../components/CardIcon';
 import TickItem from '../components/TickItem';
 import { therapeuticAreas } from '../data/therapeuticAreas';
 import { products } from '../data/products';
+import heroPharmacist from '../assets/photos/hero-pharmacist.jpg';
+import aboutPharmaProfessional from '../assets/photos/about-pharma-professional.jpg';
+
+const WHATSAPP_NUMBER = '917879555517';
+const CONTACT_WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hi Galbha Remedies, I'd like to know more about your products and services."
+)}`;
 
 const QUALITY_APPROACH = [
   {
@@ -101,7 +114,7 @@ const WHY_US = [
   {
     icon: UserCheck,
     title: 'Founder-Led Commitment',
-    text: 'Ghalbha Remedies is led by its Founder and Proprietor, Shiv Galbha, bringing direct leadership, professional experience and a long-term vision to the organization.',
+    text: 'Galbha Remedies is led by its Founder and Proprietor, Shiv Galbha, bringing direct leadership, professional experience and a long-term vision to the organization.',
   },
 ];
 
@@ -136,30 +149,49 @@ export default function Home() {
   return (
     <>
       {/* 01 — HOME */}
-      <Section id="hero" index="01" label="Home" bg="paper" className="hero-section">
-        <div className="hero-copy">
-          <span className="eyebrow">Quality Medicines. Ethical Principles. Trusted Care.</span>
-          <p className="hero-body">
-            Ghalbha Remedies is a quality-focused pharmaceutical company committed to bringing
-            reliable, quality-oriented medicines to the healthcare market across India.
-          </p>
-          <p className="hero-body">
-            Founded on extensive professional and business experience, we work with carefully
-            selected manufacturing partners operating under recognized quality and regulatory
-            standards, including <strong>WHO-GMP, ISO, GLP and US FDA standards/requirements, as
-            applicable to the facility and product</strong>.
-          </p>
-          <p className="hero-statement">
-            Our approach is simple: <strong>Select Responsibly. Promote Ethically. Serve Reliably.</strong>
-          </p>
+      <Section id="hero" bg="paper" className="hero-section">
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <span className="eyebrow">Chandigarh-Based Pharmaceutical Company</span>
+            <h1>Quality Medicines. Ethical Principles. Trusted Care.</h1>
+            <p className="hero-body">
+              Galbha Remedies is a quality-focused pharmaceutical company committed to bringing
+              reliable, quality-oriented medicines to the healthcare market across India. Founded
+              on extensive professional and business experience, we work with carefully selected
+              manufacturing partners operating under recognized quality and regulatory standards.
+            </p>
 
-          <div className="hero-ctas">
-            <Link to="/products" className="btn btn-primary">
-              Explore Our Products <ArrowRight size={16} />
-            </Link>
-            <HashLink hash="#quality" className="btn btn-secondary">
-              Our Commitment to Quality
-            </HashLink>
+            <div className="hero-credentials">
+              <span className="hero-credentials__label mono">Recognized Standards</span>
+              <div className="seal-row">
+                {SEALS.map((seal) => (
+                  <SealBadge key={seal} label={seal} />
+                ))}
+              </div>
+            </div>
+
+            <p className="hero-statement">
+              Our approach is simple: <strong>Select Responsibly. Promote Ethically. Serve Reliably.</strong>
+            </p>
+
+            <div className="hero-ctas">
+              <Link to="/products" className="btn btn-primary">
+                Explore Our Products <ArrowRight size={16} />
+              </Link>
+              <HashLink hash="#quality" className="btn btn-secondary">
+                Our Commitment to Quality
+              </HashLink>
+            </div>
+          </div>
+
+          <div className="hero-media">
+            <div className="hero-media__frame">
+              <img src={heroPharmacist} alt="Pharmacist reviewing medicine stock on a pharmacy shelf" />
+            </div>
+            <div className="hero-media__badge">
+              <strong className="mono">18+</strong>
+              <span>Years of Professional Experience</span>
+            </div>
           </div>
         </div>
       </Section>
@@ -186,42 +218,54 @@ export default function Home() {
       </div>
 
       {/* 02 — ABOUT */}
-      <Section id="about" index="02" label="About" bg="paper-alt">
-        <h2>Building a Pharmaceutical Company With Purpose</h2>
-        <p>
-          Ghalbha Remedies is a <strong>Chandigarh-based pharmaceutical company</strong> engaged
-          in ethical pharmaceutical marketing, trading, wholesale operations and third-party
-          manufacturing coordination, with a vision to establish a strong{' '}
-          <strong>PAN-India presence</strong>.
-        </p>
-        <p>
-          The company has been founded with a clear purpose: to make quality-oriented medicines
-          available through responsible sourcing, trusted manufacturing relationships and
-          ethical pharmaceutical practices.
-        </p>
-        <p>We believe that healthcare is ultimately about people.</p>
-        <p>
-          Every medicine represented by us eventually reaches a patient, and that responsibility
-          influences the way we approach our products, manufacturing partners, business
-          relationships and market practices.
-        </p>
-        <p>
-          Our aim is to build Ghalbha Remedies as an organization recognized for:
-        </p>
-        <div className="chip-row">
-          {['Quality', 'Integrity', 'Responsibility', 'Reliability'].map((v) => (
-            <span key={v} className="chip">
-              {v}
-            </span>
-          ))}
+      <Section id="about" bg="paper-alt">
+        <div className="about-layout">
+          <div className="about-copy">
+            <h2>Building a Pharmaceutical Company With Purpose</h2>
+            <p>
+              Galbha Remedies is a <strong>Chandigarh-based pharmaceutical company</strong> engaged
+              in ethical pharmaceutical marketing, trading, wholesale operations and third-party
+              manufacturing coordination, with a vision to establish a strong{' '}
+              <strong>PAN-India presence</strong>.
+            </p>
+            <p>
+              The company has been founded with a clear purpose: to make quality-oriented medicines
+              available through responsible sourcing, trusted manufacturing relationships and
+              ethical pharmaceutical practices.
+            </p>
+            <p>We believe that healthcare is ultimately about people.</p>
+            <p>
+              Every medicine represented by us eventually reaches a patient, and that responsibility
+              influences the way we approach our products, manufacturing partners, business
+              relationships and market practices.
+            </p>
+            <p>
+              Our aim is to build Galbha Remedies as an organization recognized for:
+            </p>
+            <div className="chip-row">
+              {['Quality', 'Integrity', 'Responsibility', 'Reliability'].map((v) => (
+                <span key={v} className="chip">
+                  {v}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="about-media">
+            <div className="about-media__frame">
+              <img
+                src={aboutPharmaProfessional}
+                alt="Pharmaceutical professional standing confidently in front of a lab bench and city skyline"
+              />
+            </div>
+          </div>
         </div>
       </Section>
 
       {/* 03 — OUR STORY */}
-      <Section id="story" index="03" label="Our Story" bg="paper">
+      <Section id="story" bg="paper">
         <h2>From Diverse Experience to a Focused Pharmaceutical Vision</h2>
         <p>
-          Ghalbha Remedies is the result of a professional journey that has crossed several
+          Galbha Remedies is the result of a professional journey that has crossed several
           important manufacturing sectors.
         </p>
         <p>
@@ -246,7 +290,7 @@ export default function Home() {
             principles and responsible business practices are built into its foundation.
           </strong>
         </p>
-        <p>This understanding became the inspiration behind Ghalbha Remedies.</p>
+        <p>This understanding became the inspiration behind Galbha Remedies.</p>
         <p>
           Today, the company is focused on building a quality-oriented pharmaceutical portfolio
           through carefully selected manufacturing partnerships and responsible ethical
@@ -255,7 +299,7 @@ export default function Home() {
       </Section>
 
       {/* 04 — FOUNDER */}
-      <Section id="founder" index="04" label="Founder" bg="mist" className="founder-section">
+      <Section id="founder" bg="mist" className="founder-section">
         <div className="founder-layout">
           <div
             className="founder-portrait placeholder-frame"
@@ -267,7 +311,7 @@ export default function Home() {
           <div>
             <h2>Shiv Galbha — Founder &amp; Proprietor</h2>
             <p>
-              Ghalbha Remedies is founded by <strong>Shiv Galbha</strong>, an HR and business
+              Galbha Remedies is founded by <strong>Shiv Galbha</strong>, an HR and business
               professional with more than <strong>18 years of professional and business
               experience</strong> across diverse manufacturing sectors.
             </p>
@@ -299,7 +343,7 @@ export default function Home() {
               <TickItem>Long-term professional relationships</TickItem>
               <TickItem>Patient-focused thinking</TickItem>
             </ul>
-            <p>This vision led to the establishment of <strong>Ghalbha Remedies</strong>.</p>
+            <p>This vision led to the establishment of <strong>Galbha Remedies</strong>.</p>
             <p>
               The objective is not simply to build another pharmaceutical company, but to build
               an organization whose reputation develops through{' '}
@@ -311,7 +355,7 @@ export default function Home() {
       </Section>
 
       {/* 05 — FOUNDER'S MESSAGE */}
-      <Section id="founder-message" index="05" label="Founder&rsquo;s Message" bg="paper-alt">
+      <Section id="founder-message" bg="paper-alt">
         <h2>A Message From the Founder</h2>
         <blockquote className="founder-letter">
           <p>
@@ -336,7 +380,7 @@ export default function Home() {
               but the foundation of the business.
             </strong>
           </p>
-          <p>This belief became the inspiration behind Ghalbha Remedies.</p>
+          <p>This belief became the inspiration behind Galbha Remedies.</p>
           <p>
             Our objective is to work with carefully selected manufacturing partners, develop
             quality-oriented product portfolios and serve the healthcare market through ethical
@@ -348,7 +392,7 @@ export default function Home() {
             influence every decision we make.
           </p>
           <p>
-            As we build Ghalbha Remedies, our focus will remain on creating long-term value
+            As we build Galbha Remedies, our focus will remain on creating long-term value
             through <strong>quality, integrity, reliability and trust</strong>.
           </p>
           <p>
@@ -356,7 +400,7 @@ export default function Home() {
             <strong>our reputation will be built through the trust we earn.</strong>
           </p>
           <footer className="founder-letter__sign">
-            — <strong>Shiv Galbha</strong>, Founder &amp; Proprietor, Ghalbha Remedies
+            — <strong>Shiv Galbha</strong>, Founder &amp; Proprietor, Galbha Remedies
           </footer>
         </blockquote>
       </Section>
@@ -364,10 +408,9 @@ export default function Home() {
       {/* 06 / 07 — VISION / MISSION */}
       <div className="split-section reveal" id="vision-mission" ref={visionMissionRef}>
         <div className="split-panel split-panel--dark on-dark" id="vision">
-          <div className="split-panel__rail">
-            <span className="section-rail__code">§06</span>
-            <span className="section-rail__label">Vision</span>
-          </div>
+          <span className="split-panel__icon">
+            <Eye size={24} strokeWidth={1.6} aria-hidden="true" />
+          </span>
           <h2>Our Vision</h2>
           <p className="split-panel__lead">
             To build a trusted pharmaceutical organization where quality, ethical
@@ -375,16 +418,22 @@ export default function Home() {
             among patients, healthcare professionals and our partners.
           </p>
           <p>
-            We envision Ghalbha Remedies as a pharmaceutical organization known not only for
+            We envision Galbha Remedies as a pharmaceutical organization known not only for
             its products, but also for the principles behind them.
           </p>
+          <div className="chip-row">
+            {['Quality', 'Ethics', 'Trust', 'Growth'].map((v) => (
+              <span key={v} className="chip chip--dark">
+                {v}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="split-panel split-panel--light" id="mission">
-          <div className="split-panel__rail">
-            <span className="section-rail__code">§07</span>
-            <span className="section-rail__label">Mission</span>
-          </div>
+          <span className="split-panel__icon">
+            <Target size={24} strokeWidth={1.6} aria-hidden="true" />
+          </span>
           <h2>Our Mission</h2>
           <p className="split-panel__lead">
             To responsibly bring quality-oriented medicines to the market through trusted
@@ -408,10 +457,10 @@ export default function Home() {
       </div>
 
       {/* 08 — QUALITY */}
-      <Section id="quality" index="08" label="Quality" bg="paper">
+      <Section id="quality" bg="paper">
         <h2>Quality Is Our Starting Point.</h2>
         <p>
-          At Ghalbha Remedies, we believe that quality should be considered from the very
+          At Galbha Remedies, we believe that quality should be considered from the very
           beginning of the pharmaceutical journey.
         </p>
         <p>
@@ -454,14 +503,14 @@ export default function Home() {
       </Section>
 
       {/* 09 — ETHICAL MARKETING */}
-      <Section id="ethical-marketing" index="09" label="Ethical Marketing" bg="mist">
+      <Section id="ethical-marketing" bg="mist">
         <h2>Ethical Marketing. Responsible Healthcare.</h2>
         <p>
           Pharmaceutical marketing carries a responsibility that is different from ordinary
           commercial marketing.
         </p>
         <p>
-          At Ghalbha Remedies, we believe communication around medicines should be guided by{' '}
+          At Galbha Remedies, we believe communication around medicines should be guided by{' '}
           <strong>
             professional ethics, responsible information and respect for healthcare
             professionals and patients
@@ -495,7 +544,7 @@ export default function Home() {
       </Section>
 
       {/* 10 — THERAPEUTIC AREAS */}
-      <Section id="therapeutic-areas" index="10" label="Therapeutic Areas" bg="paper-alt">
+      <Section id="therapeutic-areas" bg="paper-alt">
         <h2>Focused Therapeutic Expertise</h2>
         <p>
           Our pharmaceutical portfolio is being developed across key therapeutic areas with the
@@ -509,7 +558,7 @@ export default function Home() {
       </Section>
 
       {/* 11 — PRODUCTS */}
-      <Section id="products-teaser" index="11" label="Products" bg="paper">
+      <Section id="products-teaser" bg="paper">
         <h2>Quality-Oriented Products Across Key Therapeutic Areas</h2>
         <p>
           We are developing a diversified pharmaceutical portfolio with a focus on{' '}
@@ -537,8 +586,8 @@ export default function Home() {
       </Section>
 
       {/* 12 — WHY GALBHA REMEDIES */}
-      <Section id="why-us" index="12" label="Why Ghalbha Remedies" bg="mist">
-        <h2>Why Choose Ghalbha Remedies?</h2>
+      <Section id="why-us" bg="mist">
+        <h2>Why Choose Galbha Remedies?</h2>
         <div className="card-grid card-grid--3">
           {WHY_US.map(({ icon: Icon, title, text }, index) => (
             <div className="card" key={title}>
@@ -551,10 +600,10 @@ export default function Home() {
       </Section>
 
       {/* 13 — PAN-INDIA OPERATIONS */}
-      <Section id="pan-india" index="13" label="PAN-India" bg="paper">
+      <Section id="pan-india" bg="paper">
         <h2>From Chandigarh to Healthcare Markets Across India</h2>
         <p>
-          Based in <strong>Chandigarh</strong>, Ghalbha Remedies is building its
+          Based in <strong>Chandigarh</strong>, Galbha Remedies is building its
           pharmaceutical operations with a PAN-India vision.
         </p>
         <p>Our business activities include:</p>
@@ -576,11 +625,11 @@ export default function Home() {
       </Section>
 
       {/* 14 — PARTNER */}
-      <Section id="partner" index="14" label="Partner" bg="navy" onDark className="partner-section">
+      <Section id="partner" bg="navy" onDark className="partner-section">
         <h2>Let&rsquo;s Build Healthcare Partnerships on Trust.</h2>
         <p>
           We welcome enquiries from organizations and professionals interested in building
-          long-term pharmaceutical business relationships with Ghalbha Remedies.
+          long-term pharmaceutical business relationships with Galbha Remedies.
         </p>
         <p>We welcome enquiries from:</p>
         <p className="pipe-list">
@@ -603,37 +652,83 @@ export default function Home() {
           ))}
         </div>
         <a href="#contact" onClick={handlePartnerCta} className="btn btn-primary partner-cta">
-          Partner With Ghalbha Remedies <ArrowRight size={16} />
+          Partner With Galbha Remedies <ArrowRight size={16} />
         </a>
       </Section>
 
       {/* 15 — CONTACT */}
-      <Section id="contact" index="15" label="Contact" bg="paper-alt">
-        <h2>Connect With Ghalbha Remedies</h2>
+      <Section id="contact" bg="paper-alt">
+        <h2>Connect With Galbha Remedies</h2>
         <p>
           Whether you have a product enquiry, distribution opportunity, business proposal or
           general enquiry, we would be pleased to hear from you.
         </p>
 
         <div className="contact-layout">
-          <div className="contact-info">
-            <h3>Ghalbha Remedies</h3>
+          <div className="contact-info on-dark">
+            <h3>Galbha Remedies</h3>
+            <p className="contact-info__lead">
+              Reach out directly — we&rsquo;re happy to answer product, distribution or
+              partnership questions.
+            </p>
             <ul className="contact-info__list">
               <li>
-                <MapPin size={18} /> <span>Chandigarh, India</span>
+                <span className="contact-info__icon">
+                  <MapPin size={18} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="contact-info__label mono">Location</span>
+                  <span className="contact-info__value">Chandigarh, India</span>
+                </span>
               </li>
               <li>
-                <span className="mono">Mobile:</span> <a href="tel:+917879555517">7879555517</a>
+                <span className="contact-info__icon">
+                  <Phone size={18} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="contact-info__label mono">Mobile</span>
+                  <a href="tel:+917879555517" className="contact-info__value">
+                    +91 7879555517
+                  </a>
+                </span>
               </li>
               <li>
-                <span className="mono">Email:</span>{' '}
-                <a href="mailto:info@galbharemedies.com">info@galbharemedies.com</a>
+                <span className="contact-info__icon">
+                  <Mail size={18} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="contact-info__label mono">Email</span>
+                  <a href="mailto:info@galbharemedies.com" className="contact-info__value">
+                    info@galbharemedies.com
+                  </a>
+                </span>
               </li>
               <li>
-                <span className="mono">Website:</span>{' '}
-                <a href="https://www.galbharemedies.com">www.galbharemedies.com</a>
+                <span className="contact-info__icon">
+                  <Globe size={18} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="contact-info__label mono">Website</span>
+                  <a href="https://www.galbharemedies.com" className="contact-info__value">
+                    www.galbharemedies.com
+                  </a>
+                </span>
               </li>
             </ul>
+
+            <div className="contact-info__actions">
+              <a href="tel:+917879555517" className="btn btn-secondary">
+                <Phone size={16} /> Call Now
+              </a>
+              <a
+                href={CONTACT_WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-whatsapp"
+              >
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
+            </div>
           </div>
 
           <ContactForm prefill={enquiryPrefill} />

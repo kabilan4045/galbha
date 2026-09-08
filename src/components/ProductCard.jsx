@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Pill } from 'lucide-react';
+import { MessageCircle, Pill } from 'lucide-react';
+
+const WHATSAPP_NUMBER = '917879555517';
+
+function buildWhatsappHref(product) {
+  const message = `Hi Galbha Remedies, I'd like to enquire about ${product.brand} (${product.composition}). Could you share more details?`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
 
 export default function ProductCard({ product, href, onClick }) {
   const content = (
@@ -17,6 +24,16 @@ export default function ProductCard({ product, href, onClick }) {
       <p className="product-card__composition" title={product.composition}>
         {product.composition}
       </p>
+      <a
+        href={buildWhatsappHref(product)}
+        className="btn btn-whatsapp product-card__enquire"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <MessageCircle size={16} />
+        Enquire on WhatsApp
+      </a>
     </>
   );
 

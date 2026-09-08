@@ -63,7 +63,7 @@ export default function Header() {
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container site-header__inner">
         <Link to="/" className="site-header__brand" onClick={() => setMenuOpen(false)}>
-          <img src={logo} alt="Ghalbha Remedies" className="site-header__logo" />
+          <img src={logo} alt="Galbha Remedies" className="site-header__logo" />
         </Link>
 
         <nav className="site-header__nav" aria-label="Primary">

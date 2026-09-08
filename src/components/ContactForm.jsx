@@ -70,7 +70,7 @@ export default function ContactForm({ prefill }) {
         <CheckCircle2 size={40} className="contact-form__success-icon" />
         <h3>Enquiry Received</h3>
         <p>
-          Thank you for reaching out to Ghalbha Remedies. Our team will review your enquiry and
+          Thank you for reaching out to Galbha Remedies. Our team will review your enquiry and
           get back to you shortly.
         </p>
         <button
