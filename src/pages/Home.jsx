@@ -31,8 +31,12 @@ import CardIcon from '../components/CardIcon';
 import TickItem from '../components/TickItem';
 import { therapeuticAreas } from '../data/therapeuticAreas';
 import { products } from '../data/products';
-import heroPharmacist from '../assets/photos/hero-pharmacist.jpg';
-import aboutPharmaProfessional from '../assets/photos/about-pharma-professional.jpg';
+import aboutUsImage from '../assets/photos/about-us.webp';
+import qualityIsFirstImage from '../assets/photos/quality-is-first.webp';
+import therapeuticAreaImage from '../assets/photos/our-therapeutic-area.webp';
+import ourProductsImage from '../assets/photos/our-products.webp';
+import partnerUsImage from '../assets/photos/partner-us.webp';
+import contactUsImage from '../assets/photos/contact-us.webp';
 
 const WHATSAPP_NUMBER = '917879555517';
 const CONTACT_WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -118,7 +122,7 @@ const WHY_US = [
   },
 ];
 
-const SEALS = ['WHO-GMP', 'ISO', 'GLP', 'US FDA'];
+const SEALS = ['WHO-GMP', 'ISO', 'GLP'];
 
 export default function Home() {
   const location = useLocation();
@@ -150,7 +154,7 @@ export default function Home() {
     <>
       {/* 01 — HOME */}
       <Section id="hero" bg="paper" className="hero-section">
-        <div className="hero-grid">
+        <div className="hero-grid hero-grid--copy-only">
           <div className="hero-copy">
             <span className="eyebrow">Chandigarh-Based Pharmaceutical Company</span>
             <h1>Quality Medicines. Ethical Principles. Trusted Care.</h1>
@@ -181,16 +185,6 @@ export default function Home() {
               <HashLink hash="#quality" className="btn btn-secondary">
                 Our Commitment to Quality
               </HashLink>
-            </div>
-          </div>
-
-          <div className="hero-media">
-            <div className="hero-media__frame">
-              <img src={heroPharmacist} alt="Pharmacist reviewing medicine stock on a pharmacy shelf" />
-            </div>
-            <div className="hero-media__badge">
-              <strong className="mono">18+</strong>
-              <span>Years of Professional Experience</span>
             </div>
           </div>
         </div>
@@ -252,10 +246,7 @@ export default function Home() {
           </div>
           <div className="about-media">
             <div className="about-media__frame">
-              <img
-                src={aboutPharmaProfessional}
-                alt="Pharmaceutical professional standing confidently in front of a lab bench and city skyline"
-              />
+              <img src={aboutUsImage} alt="Galbha Remedies pharmaceutical professional illustration" />
             </div>
           </div>
         </div>
@@ -458,26 +449,36 @@ export default function Home() {
 
       {/* 08 — QUALITY */}
       <Section id="quality" bg="paper">
-        <h2>Quality Is Our Starting Point.</h2>
-        <p>
-          At Galbha Remedies, we believe that quality should be considered from the very
-          beginning of the pharmaceutical journey.
-        </p>
-        <p>
-          We therefore seek to work with carefully selected manufacturing partners that have
-          appropriate manufacturing capabilities and operate under recognized quality and
-          regulatory frameworks.
-        </p>
-        <p>
-          Depending on the facility and applicable product requirements, our manufacturing
-          network includes facilities associated with standards and regulatory frameworks such
-          as:
-        </p>
-        <div className="seal-row">
-          {SEALS.map((seal) => (
-            <SealBadge key={seal} label={seal} />
-          ))}
+        <div className="section-intro">
+          <div className="section-intro__text">
+            <h2>Quality Is Our Starting Point.</h2>
+            <p>
+              At Galbha Remedies, we believe that quality should be considered from the very
+              beginning of the pharmaceutical journey.
+            </p>
+            <p>
+              We therefore seek to work with carefully selected manufacturing partners that have
+              appropriate manufacturing capabilities and operate under recognized quality and
+              regulatory frameworks.
+            </p>
+            <p>
+              Depending on the facility and applicable product requirements, our manufacturing
+              network includes facilities associated with standards and regulatory frameworks
+              such as:
+            </p>
+            <div className="seal-row">
+              {SEALS.map((seal) => (
+                <SealBadge key={seal} label={seal} />
+              ))}
+            </div>
+          </div>
+          <div className="section-intro__media">
+            <div className="section-intro__media__frame">
+              <img src={qualityIsFirstImage} alt="Galbha Remedies quality-first pharmaceutical illustration" />
+            </div>
+          </div>
         </div>
+
         <p className="section-spacer-top">
           Our approach focuses on responsible partner selection, manufacturing capabilities,
           quality systems, regulatory compliance and consistency.
@@ -545,11 +546,20 @@ export default function Home() {
 
       {/* 10 — THERAPEUTIC AREAS */}
       <Section id="therapeutic-areas" bg="paper-alt">
-        <h2>Focused Therapeutic Expertise</h2>
-        <p>
-          Our pharmaceutical portfolio is being developed across key therapeutic areas with the
-          objective of addressing diverse healthcare requirements.
-        </p>
+        <div className="section-intro">
+          <div className="section-intro__text">
+            <h2>Focused Therapeutic Expertise</h2>
+            <p>
+              Our pharmaceutical portfolio is being developed across key therapeutic areas with
+              the objective of addressing diverse healthcare requirements.
+            </p>
+          </div>
+          <div className="section-intro__media">
+            <div className="section-intro__media__frame">
+              <img src={therapeuticAreaImage} alt="Galbha Remedies therapeutic areas illustration" />
+            </div>
+          </div>
+        </div>
         <div className="card-grid card-grid--4">
           {therapeuticAreas.map((area, index) => (
             <TherapeuticAreaCard area={area} variant={index % 3} key={area.slug} />
@@ -559,30 +569,39 @@ export default function Home() {
 
       {/* 11 — PRODUCTS */}
       <Section id="products-teaser" bg="paper">
-        <h2>Quality-Oriented Products Across Key Therapeutic Areas</h2>
-        <p>
-          We are developing a diversified pharmaceutical portfolio with a focus on{' '}
-          <strong>
-            therapeutic relevance, quality-oriented manufacturing and responsible pharmaceutical
-            marketing
-          </strong>
-          .
-        </p>
-        <p>Our product selection is guided by the belief that a strong pharmaceutical portfolio should combine:</p>
-        <p className="pipe-list">
-          {['Relevant Formulations', 'Responsible Sourcing', 'Quality-Focused Manufacturing', 'Ethical Promotion'].map(
-            (s) => (
-              <span key={s}>{s}</span>
-            )
-          )}
-        </p>
-        <p>
-          As our portfolio expands, we aim to provide healthcare professionals with reliable
-          pharmaceutical options across important therapeutic areas.
-        </p>
-        <Link to="/products" className="btn btn-primary">
-          View Our Products <ArrowRight size={16} />
-        </Link>
+        <div className="section-intro">
+          <div className="section-intro__text">
+            <h2>Quality-Oriented Products Across Key Therapeutic Areas</h2>
+            <p>
+              We are developing a diversified pharmaceutical portfolio with a focus on{' '}
+              <strong>
+                therapeutic relevance, quality-oriented manufacturing and responsible
+                pharmaceutical marketing
+              </strong>
+              .
+            </p>
+            <p>Our product selection is guided by the belief that a strong pharmaceutical portfolio should combine:</p>
+            <p className="pipe-list">
+              {['Relevant Formulations', 'Responsible Sourcing', 'Quality-Focused Manufacturing', 'Ethical Promotion'].map(
+                (s) => (
+                  <span key={s}>{s}</span>
+                )
+              )}
+            </p>
+            <p>
+              As our portfolio expands, we aim to provide healthcare professionals with reliable
+              pharmaceutical options across important therapeutic areas.
+            </p>
+            <Link to="/products" className="btn btn-primary">
+              View Our Products <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="section-intro__media">
+            <div className="section-intro__media__frame">
+              <img src={ourProductsImage} alt="Galbha Remedies pharmaceutical products illustration" />
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* 12 — WHY GALBHA REMEDIES */}
@@ -626,43 +645,61 @@ export default function Home() {
 
       {/* 14 — PARTNER */}
       <Section id="partner" bg="navy" onDark className="partner-section">
-        <h2>Let&rsquo;s Build Healthcare Partnerships on Trust.</h2>
-        <p>
-          We welcome enquiries from organizations and professionals interested in building
-          long-term pharmaceutical business relationships with Galbha Remedies.
-        </p>
-        <p>We welcome enquiries from:</p>
-        <p className="pipe-list">
-          {[
-            'Pharmaceutical Distributors',
-            'Stockists & Wholesalers',
-            'Healthcare Professionals',
-            'Business Partners',
-            'Marketing Associates',
-          ].map((s) => (
-            <span key={s}>{s}</span>
-          ))}
-        </p>
-        <p>We believe successful partnerships are built through:</p>
-        <div className="chip-row">
-          {['Quality', 'Transparency', 'Professionalism', 'Ethical Practices', 'Mutual Growth'].map((v) => (
-            <span key={v} className="chip chip--dark">
-              {v}
-            </span>
-          ))}
+        <div className="section-intro section-intro--on-dark">
+          <div className="section-intro__text">
+            <h2>Let&rsquo;s Build Healthcare Partnerships on Trust.</h2>
+            <p>
+              We welcome enquiries from organizations and professionals interested in building
+              long-term pharmaceutical business relationships with Galbha Remedies.
+            </p>
+            <p>We welcome enquiries from:</p>
+            <p className="pipe-list">
+              {[
+                'Pharmaceutical Distributors',
+                'Stockists & Wholesalers',
+                'Healthcare Professionals',
+                'Business Partners',
+                'Marketing Associates',
+              ].map((s) => (
+                <span key={s}>{s}</span>
+              ))}
+            </p>
+            <p>We believe successful partnerships are built through:</p>
+            <div className="chip-row">
+              {['Quality', 'Transparency', 'Professionalism', 'Ethical Practices', 'Mutual Growth'].map((v) => (
+                <span key={v} className="chip chip--dark">
+                  {v}
+                </span>
+              ))}
+            </div>
+            <a href="#contact" onClick={handlePartnerCta} className="btn btn-primary partner-cta">
+              Partner With Galbha Remedies <ArrowRight size={16} />
+            </a>
+          </div>
+          <div className="section-intro__media">
+            <div className="section-intro__media__frame">
+              <img src={partnerUsImage} alt="Galbha Remedies partnership illustration" />
+            </div>
+          </div>
         </div>
-        <a href="#contact" onClick={handlePartnerCta} className="btn btn-primary partner-cta">
-          Partner With Galbha Remedies <ArrowRight size={16} />
-        </a>
       </Section>
 
       {/* 15 — CONTACT */}
       <Section id="contact" bg="paper-alt">
-        <h2>Connect With Galbha Remedies</h2>
-        <p>
-          Whether you have a product enquiry, distribution opportunity, business proposal or
-          general enquiry, we would be pleased to hear from you.
-        </p>
+        <div className="section-intro">
+          <div className="section-intro__text">
+            <h2>Connect With Galbha Remedies</h2>
+            <p>
+              Whether you have a product enquiry, distribution opportunity, business proposal or
+              general enquiry, we would be pleased to hear from you.
+            </p>
+          </div>
+          <div className="section-intro__media">
+            <div className="section-intro__media__frame">
+              <img src={contactUsImage} alt="Galbha Remedies contact support illustration" />
+            </div>
+          </div>
+        </div>
 
         <div className="contact-layout">
           <div className="contact-info on-dark">
