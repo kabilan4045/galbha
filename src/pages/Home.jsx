@@ -37,6 +37,7 @@ import therapeuticAreaImage from '../assets/photos/our-therapeutic-area.webp';
 import ourProductsImage from '../assets/photos/our-products.webp';
 import partnerUsImage from '../assets/photos/partner-us.webp';
 import contactUsImage from '../assets/photos/contact-us.webp';
+import founderPhoto from '../assets/photos/founder-shiv-galbha.jpg';
 
 const WHATSAPP_NUMBER = '917879555517';
 const CONTACT_WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -292,12 +293,8 @@ export default function Home() {
       {/* 04 — FOUNDER */}
       <Section id="founder" bg="mist" className="founder-section">
         <div className="founder-layout">
-          <div
-            className="founder-portrait placeholder-frame"
-            role="img"
-            aria-label="Founder photo placeholder"
-          >
-            <span className="placeholder-frame__label mono">Founder photo — TBD</span>
+          <div className="founder-portrait">
+            <img src={founderPhoto} alt="Shiv Galbha, Founder & Proprietor of Galbha Remedies" />
           </div>
           <div>
             <h2>Shiv Galbha — Founder &amp; Proprietor</h2>
