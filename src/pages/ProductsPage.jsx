@@ -3,6 +3,9 @@ import { ChevronRight } from 'lucide-react';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
 
+// Only list products that have a photo; others reappear once their image is added.
+const productsWithImages = products.filter((product) => product.image);
+
 export default function ProductsPage() {
   return (
     <div className="page-hero container products-listing">
@@ -20,7 +23,7 @@ export default function ProductsPage() {
       </p>
 
       <div className="card-grid card-grid--2 products-page__grid">
-        {products.map((product) => (
+        {productsWithImages.map((product) => (
           <ProductCard product={product} key={product.brand} />
         ))}
       </div>
